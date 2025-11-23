@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS</title>
+    <style>
+        h1{
+            /*color:blue;*/
+            /*color:rgb(233, 184, 23);*/
+            /*color:#94e5d5;*/   
+            color:hsl(348, 80%, 33%);
+        }
+        /*.box{
+            height:200px;
+            width:200px;
+            background-color: lightblue;
+            border: 5px solid blue;
+            margin:20px;
+            padding:10px;
+        }
+        .box{
+            position:absolute;
+            top:50px;
+            left:50px;
+        
+        } */
+        .parent{
+            width:400px;
+            height: 400px;
+            background-color: darkmagenta;
+            position:relative;
+        }
+        .child{
+            width:200px;
+            height:200px;
+            background-color: aqua;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .chat{
+            width:100px;
+            height:50px;
+            background-color: lightgreen;
+            position: fixed;
+            bottom:20px;
+            right:20px;
+        }
+        .sticky{
+            background-color: cyan;
+            position:sticky;
+            top: 50px;
+            left: 20px;
+        }
+        img{
+            width:300px;
+            height: auto;
+            border-radius: 50%;
+            float:right;
+            margin-right: 10px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            background-color: lightgrey;
+            padding: 10px;
+        }
+        .box{
+            width:100ox;
+            height: 100px;
+            background-color: lightblue;
+            transition:0.3s;
+        }
+        .box:hover{
+            background-color: orange;
+            transform: rotate(10deg);
+        }
+        .ball{
+            width: 70px;
+            height: 70px;
+            background-color: lightcoral;
+            border-radius: 50%;
+            animation-name: moveball;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes moveball{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(300px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        parent box
+    </div>
+<div class="child">
+            child box
+</div>
+<h2 class="sticky">sticky heading</h2>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+
+<div class="ball"></div>
+
+
+<h1>hello</h1>
+<h1>hello</h1>
+<img src="cat.png" alt="cat image">
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+
+<div class="box"></div>
+
+<div class="container">
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+    <h1>test grid</h1>
+</div>
+<div class="chat">chat now</div>
+</body>
+</html>
