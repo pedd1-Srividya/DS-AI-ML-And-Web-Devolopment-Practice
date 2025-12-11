@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TO-DO List with Local Storage</title>
+    </head>
+    <body>
+        <input type="Text" id="new-task" placeholder="Add New Task">
+        <button onclick="addtask()">Add Task</button>
+
+        <ul id="todo-list"></ul>
+
+        <script>
+            let task=JSON.parse(localStorage.getItem("tasks")) || [];
+
+            function displayTasks(){
+                document.getElementById("todo-list").innerHTML='';
+                task.forEach((item,index)=>{
+                    let li=document.createElement("li");
+                    li.textContent=item;
+
+                    let deleteButton=document.createElement("button");
+                    deleteButton.textContent="Delete";
+
+                    deleteButton.onclick=()=>deleteTask(index);
+
+                    li.appendChild(deleteButton);
+                    document.getElementById('todo-list').appendChild(li);
+                });
+            }
+            function addtask(){
+                let taskInput=document.getElementById("new-task").value;
+                if(taskInput===""){
+                    alert("Please Enter the task.");
+                    return;
+                }
+                task.push(taskInput);
+                localStorage.setItem('tasks',JSON.stringify(task));
+                document.getElementById('new-task').value='';
+                displayTasks();
+            }
+            function deleteTask(index){
+                task.splice(index,1);
+                localStorage.setItem('tasks',JSON.stringify(task));
+                displayTasks();
+            }
+            window.onload=displayTasks;
+        </script>
+    </body>
+</html>

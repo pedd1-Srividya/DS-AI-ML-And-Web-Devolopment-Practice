@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS WITH HTML</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="Title">Hello</h1>
+        <input id="title">
+        <script>
+            //localStorage.setItem("username","Sri")
+            // document.getElementById("Title").innerText="Hello from JS";
+            document.getElementById("Title").style.color="Blue";
+            document.getElementById("Title").onclick=function(){
+                alert("Title was clicked");
+            };
+            document.getElementById("title").addEventListener("input" , (e)=>{
+                console.log("Input changed to:"+e.target.value);
+            });
+            document.getElementById("Title").innerText=localStorage.getItem("username");
+            localStorage.removeItem("username");
+
+        </script>
+    </body>
+</html>
